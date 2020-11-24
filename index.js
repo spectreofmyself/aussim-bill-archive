@@ -3,6 +3,7 @@ const session = require('express-session');
 const passport = require('passport');
 const RedditStrategy = require('passport-reddit').RedditStrategy;
 const jquery = require('jquery');
+const fs = require('fs');
 const app = express();
 
 const PORT = process.env.PORT || 3000;
@@ -53,4 +54,8 @@ app.set('views', path.join(__dirname, 'views'));
 
 // TODO: views, routing, etc
 
-app.listen(PORT, () => console.log(`aussim-bill-archive is listening on :${PORT}`));
+app.listen(PORT, () => {
+    // sanity checks for our configuration etc
+    
+    console.log(`aussim-bill-archive is listening on :${PORT}`)
+});
